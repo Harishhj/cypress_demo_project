@@ -23,5 +23,10 @@ describe('Kapiva login', () => {
             .should('be.enabled')
             .click()
         cy.task('log', 'clicked on submit button successfully')
+
+        cy.get("input[aria-label='Please enter verification code. Digit 1']")
+            .should('be.visible')
+            .type('676767')
+        cy.task('log', 'entered OTP successfully')
     })
 })

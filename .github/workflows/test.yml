@@ -3,7 +3,7 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - harish-B6  # or any branch you want to trigger the workflow on
+      - main  # or any branch you want to trigger the workflow on
   pull_request:
     branches:
       - main  # or any branch you want to trigger the workflow on

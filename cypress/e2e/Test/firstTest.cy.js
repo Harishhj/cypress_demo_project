@@ -1,24 +1,32 @@
 ///<reference types="Cypress"/>
+
+// const closeOverlayIfVisible = () => {
+//     cy.get('div.fixed.inset-0.z-[100]').then(($overlay) => {
+//         if ($overlay.length > 0) {
+//             cy.get('div.fixed.inset-0.z-[100]').invoke('remove'); // Or perform other actions to handle overlay
+//         }
+//     });
+// };
+
+
 describe('Kapiva login', () => {
     beforeEach(() => {
         cy.viewport(360, 667)
         cy.visit('https://staging.kapiva.in/')
+        cy.wait(10000)
     })
     it('Verify the Login flow', () => {
-        // cy.get('button.h-full.px-1.lg\:order-2')
-        //     .should('be.visible')
-        //     .click()
-        //cy.get('div.relative').invoke('css', 'z-index', 'auto'); // Adjust z-index if necessary
-        cy.wait(10000)
-        cy.get('div.fixed.inset-0.z-[100]').should('not.exist')
-        cy.get('button.h-full.px-1.lg\\:order-2',{timeout:10000})
+
+        
+        //closeOverlayIfVisible(); // Handle overlay if needed
+        cy.get('header.sticky.shadow-lg')
+        .find('button.h-full.px-1.lg\\:order-2')
         .scrollIntoView()
         .should('be.visible')
-        .click()
-        // .as('hambeger')
-        // cy.get('@hambeger').scrollIntoView()
-        // cy.get('@hambeger').should('be.visible')
-        // cy.get('@hambeger').click({ force: true })
+        .click({force:true})
+        // cy.get('button.h-full.px-1.lg\\:order-2').scrollIntoView().should('be.visible');
+        // cy.get('button.h-full.px-1.lg\\:order-2').click({ force: true })
+
         cy.task('log', 'clicked on hamberger menu successfully')
 
         cy.get("span[class ='text-white hover:text-white']")

@@ -4,7 +4,7 @@ describe('Kapiva login', () => {
         cy.visit('https://staging.kapiva.in/')
     })
     it('Verify the Login flow', () => {
-        cy.get('div > button.px-1')
+        cy.get('button[class="h-full px-1 lg:order-2 "]')
             .should('be.visible')
             .click()
         cy.task('log', 'clicked on hamberger menu successfully')

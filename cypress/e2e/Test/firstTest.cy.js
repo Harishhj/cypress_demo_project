@@ -8,8 +8,10 @@ describe('Kapiva login', () => {
         // cy.get('button.h-full.px-1.lg\:order-2')
         //     .should('be.visible')
         //     .click()
-        cy.get('div.relative').invoke('css', 'z-index', 'auto'); // Adjust z-index if necessary
-        cy.get('button.h-full.px-1.lg\\:order-2').as('hambeger')
+        //cy.get('div.relative').invoke('css', 'z-index', 'auto'); // Adjust z-index if necessary
+        cy.get('div.fixed.inset-0.z-[100]').should('not.exist')
+
+        cy.get('button.h-full.px-1.lg\\:order-2',{ timeout: 10000 }).as('hambeger')
         cy.get('@hambeger').scrollIntoView()
         cy.get('@hambeger').should('be.visible')
         cy.get('@hambeger').click()

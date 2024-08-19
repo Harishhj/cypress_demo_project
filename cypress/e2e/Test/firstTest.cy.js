@@ -11,9 +11,9 @@ describe('Kapiva login', () => {
         //cy.get('div.relative').invoke('css', 'z-index', 'auto'); // Adjust z-index if necessary
         cy.wait(10000)
         cy.get('div.fixed.inset-0.z-[100]').should('not.exist')
-        cy.get('button.h-full.px-1.lg\\:order-2')
+        cy.get('button.h-full.px-1.lg\\:order-2',{timeout:10000})
         .scrollIntoView()
-        // .should('be.visible')
+        .should('be.visible')
         .click()
         // .as('hambeger')
         // cy.get('@hambeger').scrollIntoView()

@@ -1,12 +1,18 @@
+///<reference types="Cypress"/>
 describe('Kapiva login', () => {
     beforeEach(() => {
         cy.viewport(360, 667)
         cy.visit('https://staging.kapiva.in/')
     })
     it('Verify the Login flow', () => {
-        cy.get('button[class="h-full px-1 lg:order-2 "]')
-            .should('be.visible')
-            .click()
+        // cy.get('button.h-full.px-1.lg\:order-2')
+        //     .should('be.visible')
+        //     .click()
+        cy.get('div.relative').invoke('css', 'z-index', 'auto'); // Adjust z-index if necessary
+        cy.get('button.h-full.px-1.lg\\:order-2').as('hambeger')
+        cy.get('@hambeger').scrollIntoView()
+        cy.get('@hambeger').should('be.visible')
+        cy.get('@hambeger').click()
         cy.task('log', 'clicked on hamberger menu successfully')
 
         cy.get("span[class ='text-white hover:text-white']")

@@ -4,7 +4,7 @@ describe('Kapiva login', () => {
     beforeEach(() => {
         cy.viewport(360, 667)
         cy.setCookie('region', 'IN')
-        cy.visit('https://staging.kapiva.in/')
+        cy.visit('https://kapiva.in/')
     })
     it('Verify the Login flow', () => {
         // cy.get('[class="styles__HamburgerWarpper-sc-1qvuluh-0 hvMRYt"]')

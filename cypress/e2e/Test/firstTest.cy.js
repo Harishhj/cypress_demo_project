@@ -3,7 +3,7 @@
 describe('Kapiva login', () => {
     beforeEach(() => {
         cy.viewport(360, 667)
-        cy.setCookie('region', 'IN')
+       // cy.setCookie('region', 'IN')
         cy.visit('https://kapiva.in/')
         cy.wait(10000)
     })
